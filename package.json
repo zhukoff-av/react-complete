@@ -2,7 +2,7 @@
   "name": "react-v8",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "homepage": ".",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
@@ -29,6 +29,7 @@
   "dependencies": {
     "@vitejs/plugin-react": "^4.3.3",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.28.0"
   }
 }
