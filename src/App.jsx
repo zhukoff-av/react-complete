@@ -2,6 +2,7 @@
 /* eslint-disable no-undef */
 import { createRoot } from "react-dom/client";
 import SearchParams from "./SearchParams";
+import React from "react";
 
 const Pet = (props) => {
   return React.createElement("div", {}, [
