@@ -1,12 +1,9 @@
 {
     "extends": [
         "eslint:recommended",
-        "plugin:react/recommended",
         "prettier"
     ],
-    "plugins": [
-        "react"
-    ],
+    "plugins": [],
     "parserOptions": {
         "ecmaVersion": 2022,
         "sourceType": "module",
@@ -18,10 +15,5 @@
         "es6": true,
         "browser": true,
         "node": true
-    },
-    "settings": {
-        "react": {
-            "version": "detect"
-        }
     }
 }
