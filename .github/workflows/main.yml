@@ -25,10 +25,17 @@ jobs:
       - name: Build the project
         run: npm run build
 
-      - name: List dist directory contents
-        run: ls -la dist
+      - name: Log current directory
+        run: pwd # Print current directory
+
+      - name: List all files and folders in root
+        run: ls -la # List everything in the root directory
+
+      - name: List contents of the dist directory
+        run: ls -la dist # Check if 'dist' exists and list its contents
 
       - name: Upload build artifacts
+        if: success() # Only upload if the build and directory checks succeed
         uses: actions/upload-artifact@v3
         with:
           name: build-output
