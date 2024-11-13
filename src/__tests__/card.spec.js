@@ -1,12 +1,12 @@
 import React from 'react';
-import { render, screen } from '@testing-library/react';
+import {render, screen} from '@testing-library/react';
 import Card from '../Card';
 import '@testing-library/jest-dom';
 
 describe('Card Component', () => {
     test('renders the Card component with correct number', () => {
         // Arrange: Render the component with a specific number prop
-        render(<Card number={5} />);
+        render(<Card number={5}/>);
 
         // Act: Find the element that contains "Card 5"
         const cardElement = screen.getByText(/Card 5/i);
@@ -17,7 +17,7 @@ describe('Card Component', () => {
 
     test('applies the correct CSS classes', () => {
         // Arrange: Render the component
-        const { container } = render(<Card number={1} />);
+        const {container} = render(<Card number={1}/>);
 
         // Act: Find the div element by CSS class name
         const cardDiv = container.firstChild;
