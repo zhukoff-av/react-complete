@@ -89,3 +89,10 @@ jobs:
         uses: cypress-io/github-action@v4
         with:
           command: npx cypress run --config-file cypress.config.js --spec ${{ matrix.spec }}
+
+      - name: Upload Cypress test report
+        if: always()
+        uses: actions/upload-artifact@v3
+        with:
+          name: cypress-report
+          path: cypress/reports
