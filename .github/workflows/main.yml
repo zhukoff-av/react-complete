@@ -60,6 +60,13 @@ jobs:
   cypress:
     needs: test
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        spec: [
+          "cypress/e2e/test-suite-1/*.cy.js",
+          "cypress/e2e/test-suite-2/*.cy.js",
+          "cypress/e2e/test-suite-3/*.cy.js"
+        ]
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
@@ -79,9 +86,6 @@ jobs:
         run: npx wait-on http://localhost:5173
 
       - name: Run Cypress tests
-        uses: cypress-io/github-action@v4  # Use Cypress GitHub Action
+        uses: cypress-io/github-action@v4
         with:
-          build: npm run build
-          start: npm run dev
-          wait-on: http://localhost:5173
-          config-file: cypress.json
+          command: npx cypress run --config-file cypress.config.js --spec ${{ matrix.spec }}
